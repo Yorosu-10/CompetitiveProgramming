@@ -13,6 +13,11 @@
 #include <iomanip>　   // setprecision()
 #include <cmath>　　　 // pow, sqrt
 #include <vector>      // vector
+#include <vector>      // vector
+typedef long long ll;
+const int INF = 1e9;
+const int MOD = 1e9 + 7;
+const ll LINF = 1e18;
 using namespace std;
 
 int main(){
@@ -98,11 +103,45 @@ sort(v.rbegin(), v.rend());
 #######################################################################
 */
 
+// String型のループ
+for (int i = 0; i < (int)str.size(); ++i){
+}
+
 // 文字列反転
 reverse(str.begin(), str.end());
 
 // 文字列の抜き出し(i文字目からnバイトの抜き出し)
 str.substr(i, n);
+
+// find関数
+// 指定の文字列が文字列の何番目に初めて出現する要素かを返す
+string str = "123123";
+int a = str.find('1'); // a=0
+int b = str.find('0'); // b=npos (or -1)（みつからない場合npos(-1)を返す）
+int c = str.find('1', 1); // c=3 （検索開始位置を指定することができる）
+
+/*
+#######################################################################
+その他
+#######################################################################
+*/
+
+// double型の整数部のみ取得
+// int型にキャストすることで小数点以下を切り落とし
+double d;
+int i = (int)d;
+
+// 整数の桁数を取得
+unsigned GetDigit(unsigned num)
+{
+    unsigned digit = 0;
+    while (num != 0)
+    {
+        num /= 10;
+        digit++;
+    }
+    return digit;
+}
 
 /*
 #######################################################################
