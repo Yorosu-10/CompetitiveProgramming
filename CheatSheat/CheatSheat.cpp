@@ -3,31 +3,6 @@
 
 /*
 #######################################################################
-テンプレート （最初にコピペしておく）
-#######################################################################
-*/
-
-#include <iostream>
-#include <string>      // string
-#include <algorithm>   // min, max, swap
-#include <iomanip>　   // setprecision()
-#include <cmath>　　　 // pow, sqrt
-#include <vector>      // vector
-#include <vector>      // vector
-typedef long long ll;
-const int INF = 1e9;
-const int MOD = 1e9 + 7;
-const ll LINF = 1e18;
-using namespace std;
-
-int main(){
-
-    
-    return 0;
-}
-
-/*
-#######################################################################
 入出力
 #######################################################################
 */
@@ -75,10 +50,10 @@ cos(M_PI *C / 180);
 */
 
 // vector // 宣言
-vector<int> v();    // 1次元, 要素数指定なし
+vector<int> v;    // 1次元, 要素数指定なし
 vector<int> v(n);   // 1次元, n個の要素
 vector<int> v(n,d); // 1次元, n個の要素, 値'd'で初期化
-vector<vector<int> > vv();   // 2次元, 要素数指定なし
+vector<vector<int> > vv;   // 2次元, 要素数指定なし
 vector<vector<int> > vv(n);  // 2次元, n行, 列数指定なし
 vector<vector<int> > vv(n, vector<int>(m));    // 2次元, n行m列
 vector<vector<int> > vv(n, vector<int>(m, d)); // 2次元, n行m列, 値'd'で初期化
@@ -96,6 +71,13 @@ sort(v.begin(), v.end());
 // vectorで降順ソート
 // 降順にしたいときはbegin() とend() の前にrを加える
 sort(v.rbegin(), v.rend());
+
+// 2次元配列と特定のキー（列間）でソート
+// https://qiita.com/Arusu_Dev/items/c36cdbc41fc77531205c
+// 昇順
+// 最後の"M"を任意の列番号にして使用
+sort(vv.begin(), vv.end(), [](const vector<int> &alpha, const vector<int> &beta) { return alpha[M] < beta[M]; });
+
 
 /*
 #######################################################################

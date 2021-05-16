@@ -9,6 +9,10 @@ using namespace std;
 
 int main()
 {
+    lli N;
+    cin >> N;
+
+    cout << (N * (N - 1) / 2) << endl;
 
     return 0;
 }
