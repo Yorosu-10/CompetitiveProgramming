@@ -72,6 +72,10 @@ sort(v.begin(), v.end());
 // 降順にしたいときはbegin() とend() の前にrを加える
 sort(v.rbegin(), v.rend());
 
+// 要素があるかどうか検索
+// 返り値は最初に見つかったその要素のイテレータ、見つかった場合はv.end()を返す。
+find(v.begin(), v.end(), );
+
 // 2次元配列と特定のキー（列間）でソート
 // https://qiita.com/Arusu_Dev/items/c36cdbc41fc77531205c
 // 昇順
