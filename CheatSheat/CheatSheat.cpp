@@ -128,3 +128,7 @@ unsigned GetDigit(unsigned num)
     }
     return digit;
 }
+
+// 割り算の切り上げ
+// 割られる数をa、 割る数をbとした時、
+int ans = (a + (b - 1)) / b;
