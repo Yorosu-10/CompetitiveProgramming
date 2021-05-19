@@ -58,6 +58,11 @@ vector<vector<int> > vv(n);  // 2次元, n行, 列数指定なし
 vector<vector<int> > vv(n, vector<int>(m));    // 2次元, n行m列
 vector<vector<int> > vv(n, vector<int>(m, d)); // 2次元, n行m列, 値'd'で初期化
 
+// ループ
+for (int i = 0; i < (int)v.size(); ++i)
+{
+}
+
 // vの末尾にxを追加
 v.push_back(x);
 // vの末尾の要素を削除
