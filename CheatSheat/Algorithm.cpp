@@ -59,7 +59,7 @@ int main(){
 高速なべき乗計算
 #######################################################################
 */
-    // a^n mod を計算する  // https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a#4-%E7%B4%AF%E4%B9%97-an
+    // aのn乗(a^n) mod を計算する  // https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a#4-%E7%B4%AF%E4%B9%97-an
     long long modpow(long long a, long long n, long long mod)
     {
         long long res = 1;
@@ -71,6 +71,25 @@ int main(){
             n >>= 1;
         }
         return res;
+    }
+
+    // aのmod mでの逆元を求める
+    // mod mでのaの逆元が存在する条件は、mとaとが互いに素であること
+    long long modinv(long long a, long long m)
+    {
+        long long b = m, u = 1, v = 0;
+        while (b)
+        {
+            long long t = a / b;
+            a -= t * b;
+            swap(a, b);
+            u -= t * v;
+            swap(u, v);
+        }
+        u %= m;
+        if (u < 0)
+            u += m;
+        return u;
     }
 
 /*
