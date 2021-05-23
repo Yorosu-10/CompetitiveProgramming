@@ -137,3 +137,30 @@ unsigned GetDigit(unsigned num)
 // 割り算の切り上げ
 // 割られる数をa、 割る数をbとした時、
 int ans = (a + (b - 1)) / b;
+
+// 最大公約数
+long long gcd(long long a, long long b)
+{
+    if (a % b == 0)
+        return b;
+    else
+        return gcd(b, a % b);
+}
+
+// 最小公倍数
+long long lcm(long long a, long long b)
+{
+    return a*b / gcd(a, b);
+}
+
+// nCkを求める（n=60くらい以下でないとオーバーフローするので注意, 60はOK）
+long long combi(long long n, long long k)
+{
+    long long r = 1;
+    for (long long d = 1; d <= k; ++d)
+    {
+        r *= n--;
+        r /= d;
+    }
+    return r;
+}
