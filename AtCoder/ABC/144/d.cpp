@@ -18,7 +18,7 @@ int main()
     if(x>=(double)(a*a*b)/2.0){
         theta = atan((double)2 * (a * a * b - x) / (a * a * a));
     }else{
-        theta = acos((double)2 * x / (a*b*b));
+        theta = PI/2 - atan((double)2 * x / (a*b*b));
     }
 
     // 出力を小数第〇位まで出力。この後に普通にcoutすればOK。
