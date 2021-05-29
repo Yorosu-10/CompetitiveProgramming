@@ -80,6 +80,11 @@ v.size()
 // 配列反転 // O(N)かかることに注意！
 reverse(v.begin(), v.end());
 
+// 一次元vector初期化
+v.assign(N, 0); // nは要素数
+// 二次元vector初期化
+vv.assign((n_rows, vector<int>(n_cols, value)); // n_rowsは行数、n_colsは列数
+
 // vectorで昇順ソート
 sort(v.begin(), v.end());
 // vectorで降順ソート
