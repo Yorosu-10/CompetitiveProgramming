@@ -1,5 +1,6 @@
 // 競技プログラムその他で使うチートシート
 // ここからコピペして時短しよう
+#include <bits/stdc++.h>
 
 /*
 #######################################################################
@@ -76,6 +77,9 @@ v.pop_back();
 // vのサイズを返す
 v.size()
 
+// 配列反転 // O(N)かかることに注意！
+reverse(v.begin(), v.end());
+
 // vectorで昇順ソート
 sort(v.begin(), v.end());
 // vectorで降順ソート
@@ -86,12 +90,27 @@ sort(v.rbegin(), v.rend());
 // 返り値は最初に見つかったその要素のイテレータ、見つかった場合はv.end()を返す。
 find(v.begin(), v.end(), );
 
-// 2次元配列と特定のキー（列間）でソート
-// https://qiita.com/Arusu_Dev/items/c36cdbc41fc77531205c
-// 昇順
-// 最後の"M"を任意の列番号にして使用
-sort(vv.begin(), vv.end(), [](const vector<int> &alpha, const vector<int> &beta) { return alpha[M] < beta[M]; });
+/*
+#######################################################################
+データ構造
+#######################################################################
+*/
 
+// deque
+// 先頭からも末尾からも追加するようなデータ構造
+
+// 宣言
+deque<char> deq;
+
+// 末尾にxを追加
+deq.push_back();
+// 先頭にxを追加
+deq.push_front();
+
+// 末尾の要素を削除
+deq.pop_back();
+
+// その他vectorやstringで使えるメソッドは使える。
 
 /*
 #######################################################################
@@ -100,10 +119,11 @@ sort(vv.begin(), vv.end(), [](const vector<int> &alpha, const vector<int> &beta)
 */
 
 // String型のループ
-for (int i = 0; i < (int)str.size(); ++i){
+for (int i = 0; i < (int)str.size(); ++i)
+{
 }
 
-// 文字列反転
+// 文字列反転  // O(N)かかることに注意！
 reverse(str.begin(), str.end());
 
 // 文字列の抜き出し(i文字目からnバイトの抜き出し)
@@ -115,6 +135,8 @@ string str = "123123";
 int a = str.find('1'); // a=0
 int b = str.find('0'); // b=npos (or -1)（みつからない場合npos(-1)を返す）
 int c = str.find('1', 1); // c=3 （検索開始位置を指定することができる）
+
+// stringの要素（str[i]）は(多分)char型
 
 /*
 #######################################################################
