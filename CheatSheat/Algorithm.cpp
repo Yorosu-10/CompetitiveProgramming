@@ -9,6 +9,15 @@ const ll LINF = 1e18;
 using namespace std;
 int N, k;
 
+// ビットに何個のフラグが立っているか
+int count_bits(int bit)
+{
+    int sum;
+    for (sum = 0; bit != 0; bit &= bit - 1)
+        sum++;
+    return sum;
+}
+
 int main(){
 /*
 #######################################################################
@@ -18,12 +27,15 @@ int main(){
     //バケット法
     // ABC200C
 
-// ビット全探索
-// https://drken1215.hatenablog.com/entry/2019/12/14/171657
-// ABC45C, ABC128C, ABC147C, ABC79C, ABC197C
-for (int bit = 0; bit < (1 << N); ++bit)
-{
+    // ビット全探索
+    // https://drken1215.hatenablog.com/entry/2019/12/14/171657 // ビットの扱いもここを見ろ
+    // ABC45C, ABC128C, ABC147C, ABC79C, ABC197C
+    for (int bit = 0; bit < (1 << N); ++bit)
+    {
     }
+
+    // bitに何個のビットが立っているか
+    // 一番上
 
     // 3次元ビット全探索
     // ABC31D 
