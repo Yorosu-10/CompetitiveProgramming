@@ -11,5 +11,20 @@ using Graph = vector<vector<int>>;
 
 int main()
 {
+    int N;
+    cin >> N;
+    int money = (int)(N * 1.08);
+
+    if(money<206){
+        cout << "Yay!" << endl;
+    }
+    else if (money > 206)
+    {
+        cout << ":(" << endl;
+    }
+    else
+    {
+        cout << "so-so" << endl;
+    }
     return 0;
 }

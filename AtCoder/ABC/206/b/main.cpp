@@ -11,5 +11,20 @@ using Graph = vector<vector<int>>;
 
 int main()
 {
+    ld N;
+    cin >> N;
+
+    ld res_tmp = ((-1.0 + sqrt(1 + 8 * N)) / 2.0);
+
+    ll res;
+
+    if(res_tmp==(ll)res_tmp){
+        res = (ll)res_tmp;
+    }
+    else
+    {
+        res = (ll)(res_tmp + 1);
+    }
+    cout << res << endl;
     return 0;
 }
