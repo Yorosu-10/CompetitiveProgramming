@@ -173,6 +173,9 @@ for (int i = 0; i < (int)str.size(); ++i)
 // 文字列反転  // O(N)かかることに注意！
 reverse(str.begin(), str.end());
 
+// 文字列のi文字目以降の取り出し(0はじまり)
+str.substr(i);
+
 // 文字列の抜き出し(i文字目からnバイトの抜き出し)
 str.substr(i, n);
 
@@ -283,3 +286,8 @@ que
 // queの全要素を削除
 while (!que.empty())
     que.pop();
+
+
+/*
+その他
+*/
