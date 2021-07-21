@@ -11,5 +11,21 @@ using Graph = vector<vector<int>>;
 
 int main()
 {
+    ll P;
+    cin >> P;
+
+    vector<ll> coin(10, 1);
+    rep(i, 1, 10){
+        coin[i] = coin[i - 1] * (i + 1);
+    }
+
+    int res = 0;
+    for (int i = 9; i >= 0; --i)
+    {
+        res += (P / coin[i]);
+        P = P % coin[i];
+    }
+
+    cout << res << endl;
     return 0;
 }

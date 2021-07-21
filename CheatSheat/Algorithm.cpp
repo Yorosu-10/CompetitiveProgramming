@@ -107,8 +107,35 @@ int main(){
         return u;
     }
 
+    // a!のmod mを求める
+    long long mod_kaijo(long long a, long long m)
+    {
+        long long res = 1;
+        for (int i = 1; i <= a; ++i)
+        {
+            res *= i;
+            res %= m;
+        }
+        return res;
+    }
+
     // nCr modの計算
-    // ABC034C
+    long long mod_nCr(long long n, long long r, long long m)
+    {
+        // nCr = n!/r!(n-r)! のmodを求める。
+        // r!, (n-r)!は逆元を求める必要あり。
+        ll n_kaijo = mod_kaijo(n, m);
+        ll r_kaijo = mod_kaijo(r, m);
+        ll nr_kaijo = mod_kaijo(n-r, m);
+        ll gyaku_r_kaijo = modinv(r_kaijo, m);
+        ll gyaku_nr_kaijo = modinv(nr_kaijo, m);
+        ll res = n_kaijo * gyaku_r_kaijo;
+        
+        res %= m;
+        res = res * gyaku_nr_kaijo;
+        res %= m;
+        return res;
+    }
 
     // 引き算が計算過程に含まれて、法がマイナスになることが考えられる時、
     // 法のマイナスをプラスに変換する

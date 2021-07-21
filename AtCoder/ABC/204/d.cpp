@@ -9,38 +9,37 @@ const double PI = acos(-1);
 using namespace std;
 using Graph = vector<vector<int>>;
 
+// DPテーブル
+bool dp[110][100010];
+
 int main()
 {
-    int N;
-    cin >> N;
-    vector<int> T(N); // 1次元, 要素数指定なし
-
-    rep(i, 0, N)
-        cin >> T[i];
-
-    // vectorで降順ソート
-    // 降順にしたいときはbegin() とend() の前にrを加える
-    sort(T.rbegin(), T.rend());
-
-    ll time1=0, time2=0;
-
-    rep(i, 0, N){
-        if(time1<=time2){
-            time1 += T[i];
-        }
-        else
-        {
-            time2 += T[i];
-        }
-    }
-
-    if(time1<=time2){
-        cout << time2 << endl;
-    }
-    else
+    int n;
+    cin >> n;
+    vector<int> a(n); // 1次元, 要素数指定なし
+    int t;
+    int sum = 0;
+    rep(i, 0, n)
     {
-        cout << time1 << endl;
+        cin >> t;
+        a[i] = t;
+        sum += t;
     }
+
+    memset(dp, 0, sizeof(dp));   // 一旦すべて false に
+    dp[0][0] = true;             // dp[0][0] だけ true に
+
+    int res = INF;
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j <= 1e5+1; ++j) {
+            dp[i+1][j] |= dp[i][j];
+            if (j >= a[i]) dp[i+1][j] |= dp[i][j-a[i]];
+            if (j >= (sum + 1) / 2 && dp[i + 1][j])
+                res = min(res, j);
+        }
+    }
+
+    cout << res << endl;
 
     return 0;
 }

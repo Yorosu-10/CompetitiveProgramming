@@ -66,8 +66,9 @@ for (int i = 0; i < (int)v.size(); ++i)
 
 // 関数の引数に使うときは参照渡しすると値が更新されて返ってくる
 void func(vector<int> &v){
-
 }
+// ->普通にコールすればよい
+func(v);
 
 // vの末尾にxを追加
 v.push_back(x);
@@ -94,6 +95,51 @@ sort(v.rbegin(), v.rend());
 // 要素があるかどうか検索
 // 返り値は最初に見つかったその要素のイテレータ、見つかった場合はv.end()を返す。
 find(v.begin(), v.end(), );
+
+// Vectorの最小値のイテレータを取得
+auto iter = min_element(v.begin(), v.end());
+// Vectorの最小値のindexを取得
+auto index = min_element(v.begin(), v.end()) - v.begin();
+// Vectorの最小値を取得
+auto min_val = *min_element(v.begin(), v.end());
+
+// Vectorの最大値のイテレータを取得
+auto iter = max_element(v.begin(), v.end());
+// Vectorの最大値のindexを取得
+auto index = max_element(v.begin(), v.end()) - v.begin();
+// Vectorの最大値を取得
+auto min_val = *max_element(v.begin(), v.end());
+
+/*
+#######################################################################
+pair
+#######################################################################
+*/
+
+// pair配列宣言
+vector<pair<int, int>> p(N);
+// .first, .secondを使って代入
+rep(i, 0, N)
+{
+    cin >> p[i].first;
+    p[i].second = i;
+}
+// ソート <.firstの要素でソートされる>
+sort(p.begin(), p.end());
+
+/*
+#######################################################################
+priority_queue
+#######################################################################
+*/
+// int 型の要素を持ち、最も小さい値を取り出す形の priority_queue を定義する場合
+priority_queue<int, vector<int>, greater<int>> Q1;
+
+// double 型の要素を持ち、最も小さい値を取り出す形の priority_queue を定義する場合
+priority_queue<double, vector<double>, greater<double>> Q2;
+
+// int 型の要素を持ち、最も大きい値を取り出す形の priority_queue を定義する場合
+priority_queue<int, vector<int>, less<int>> Q3;
 
 /*
 #######################################################################

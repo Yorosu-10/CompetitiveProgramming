@@ -19,7 +19,7 @@ using Graph = vector<vector<Edge>>;
 
 int main()
 {
-    // 頂点数と辺数
+    // 頂点数Nと辺数M
     int N, M;
     cin >> N >> M;
 

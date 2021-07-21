@@ -73,20 +73,18 @@ int main()
 
     for (int i = 0; i < Q; i++)
     {
-        int p, x, y;
-        cin >> p >> x >> y;
-        if (p == 0)
-        {
-            tree.unite(x, y); // xの木とyの木を併合する
-        }
-        else
-        {
-            if (tree.isSame(x, y))
-                cout << "Yes" << endl;
-            else
-                cout << "No" << endl;
-        }
+        int x, y;
+        cin >> x >> y;
+
+        tree.unite(x-1, y-1); // xの木とyの木を併合する        
     }
+
+    int res = 0;
+    rep(i, 0, N){
+        res = max(res, tree.treeSize(i));
+    }
+
+    cout << res << endl;
 
     return 0;
 }
